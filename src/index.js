@@ -38,10 +38,9 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    return expr.match(/.{1,10}/g).map(item => item.replaceAll(/11/g, '-').replaceAll(/10/g, '.').replaceAll(/0/g, ''))
-    .map(item => MORSE_TABLE[item] | | '').join('');
+  return expr.match(/.{1,10}/g).map(item => item.replaceAll(/11/g, '-').replaceAll(/10/g, '.').replaceAll(/0/g, ''))
+  .map(item => MORSE_TABLE[item] || ' ').join('');
 }
-
 module.exports = {
     decode
 }
